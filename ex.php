@@ -32,7 +32,6 @@ include 'head.php'
 			
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
-				<button type="submit" class="btn">Add New Data</button>
                   <tr>
                     <th>Sr.</th>
 				  <th>Name</th>

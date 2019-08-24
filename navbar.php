@@ -49,8 +49,8 @@
       <i class="fas fa-user-circle fa-fw"></i>
     </a>
     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+      <a class="dropdown-item" href="#">Profile</a>
       <a class="dropdown-item" href="#">Settings</a>
-      <a class="dropdown-item" href="#">Activity Log</a>
       <div class="dropdown-divider"></div>
       <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
     </div>
@@ -92,6 +92,12 @@
           <span>Dashboard</span>
         </a>
       </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="admin-profile.php">
+          <i class="fa fa-user"></i>
+          <span>Admin Profile</span>
+        </a>
+      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-fw fa-folder"></i>
@@ -108,14 +114,14 @@
           <a class="dropdown-item" href="blank.html">Blank Page</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="charts.php">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
-      </li>
       <li class="nav-item active">
-        <a class="nav-link" href="tables.php">
+        <a class="nav-link" href="reports.php">
           <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
+          <span>Reports</span></a>
+      </li>
+	   <li class="nav-item">
+        <a class="nav-link" href="statistics.php">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Statistics</span></a>
       </li>
     </ul>
