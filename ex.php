@@ -19,22 +19,20 @@ include 'head.php'
           <li class="breadcrumb-item">
             <a href="#">Dashboard</a>
           </li>
-          <li class="breadcrumb-item active">Tables</li>
+          <li class="breadcrumb-item active">Hiring</li>
         </ol>
 
         <!-- DataTables Example -->
         <div class="card mb-3">
           <div class="card-header">
-            <i class="fas fa-table"></i>
-            Data Table Example</div>
+            <i class="fas fa-user"></i>
+            New Entry For Hiring</div>
           <div class="card-body">
-            <div class="table-responsive">
-			
+            
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>Sr.</th>
-				  <th>Name</th>
+				  <th>Full Name</th>
 				  <th>D.O.I</th>
                     <th>Phone No</th>
                     <th>Client</th>
@@ -49,7 +47,7 @@ include 'head.php'
 				
 				<tbody>
         <tr>
-           <td><input type="number" required></td>
+          
            <td><input type="text" required></td>
 		   <td><input type="date" /></td>
            <td><input type="tel" name="phone" required></td>
@@ -73,23 +71,7 @@ include 'head.php'
             </select></td>
         </tr>
     </tbody> 
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>abc</td>
-                    <td>1 jan 2018</td>
-                    <td>+91 986542365</td>
-                    <td>Infoysis</td>
-                    <td>Pranali</td>
-					 <td>24 feb 2019</td>
-					  <td>Deciled</td>
-					   <td>Rahul</td>
-					    <td>Phase 1</td>
-						 <td>BPO</td>
-                  </tr>
-                  <tr>
-                 
-                </tbody>
+               
 				
               </table>
             </div>

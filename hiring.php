@@ -97,15 +97,13 @@ include 'head.php'
           <li class="breadcrumb-item">
             <a href="#">Dashboard</a>
           </li>
-          <li class="breadcrumb-item active">Tables</li>
+          <li class="breadcrumb-item active">Hiring</li>
         </ol>
 
         <!-- DataTables Example -->
         <div class="card mb-3">
           <div class="card-header">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
-				Add New Entry
-			</button>
+		  <a href="new-entry-hiring.php" class="btn btn-lg btn-success btn-block" style="width:200px;">Add New Entry</a>
           <div class="card-body">
             <div class="table-responsive">
 			 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -117,7 +115,7 @@ include 'head.php'
 					<th>Phone</th>
 				    <th>Client</th>
                     <th>HR</th>
-					<th>D.O.J</th>
+					<th><a href="editstatus.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>D.O.J </th>
 					<th>Status</th>
 					<th>Location</th>
 					<th>Recruiter</th>

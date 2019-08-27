@@ -60,21 +60,8 @@ include 'head.php'
         <option value="">FNA/IT</option>
     </select>
   </div>
-  
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" name="password" class="form-control" placeholder="Password">
-  </div>
-  
-   <div class="form-group">
-    <label for="exampleInputPassword1">Confirm Password</label>
-    <input type="password" name="conf-password" class="form-control" placeholder="Confirm Password">
-  </div>
-  
 </form>
-
-
-      </div>
+	</div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" name="registerbtn" class="btn btn-primary">Submit</button>
