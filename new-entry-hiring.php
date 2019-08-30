@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <style>
@@ -16,6 +17,7 @@
 
 </
 </style>
+
 <html lang="en">
 <?php
 include 'head.php'
@@ -25,6 +27,9 @@ include 'head.php'
  <?php 
  include 'navbar.php'
  ?>
+ 
+ 
+
     <div id="content-wrapper">
 
       <div class="container-fluid">
@@ -45,7 +50,7 @@ include 'head.php'
 		  <span style="float:right;"> </span>
           </div>
 				
-				
+				<form role="form" action="registers.php" method="post"> 
 					<div class="row" style="margin-left:0px; margin-right:0px;">
 						<div class="col-md-3">
 							<b>Name</b>
@@ -87,39 +92,39 @@ include 'head.php'
 							<b>Status</b>
 						</div>
 						<div class="col-md-3">
-							<select class="form-control" name="designation" required="required">
+							<select class="form-control" name="status" required="required">
 											<option value="">Select Center</option>
-											<option value="Intern" selected="selected">To Joined</option>
-											<option value="Jr. Recruiter" selected="selected" >Joined</option>
-											<option value="Recruiter" selected="selected" >Declined</option>
+											<option value="To Joined" selected="selected">To Joined</option>
+											<option value="Joined" selected="selected" >Joined</option>
+											<option value="Declined" selected="selected" >Declined</option>
 									</select>
 						</div>
 						<div class="col-md-3">
 							<b>Recruiter</b>
 						</div>
 						<div class="col-md-3">
-							<input type="text" class="form-control" name="recruiter_name" value="" placeholder="Enter Recruiter Name" required /> 
+							<input type="text" class="form-control" name="recruiter" value="" placeholder="Enter Recruiter Name" required /> 
 						</div>
 						
 						<div class="col-md-3">
 							<b>Center</b>
 						</div>
 						<div class="col-md-3">
-							<select class="form-control" name="designation" required="required">
+							<select class="form-control" name="center" required>
 											<option value="">Select Center</option>
-											<option value="Intern" >Phase 1</option>
-											<option value="Jr. Recruiter" >Phase 2</option>
-											<option value="Recruiter" >Phase3</option>
+											<option value="Phase 1" >Phase 1</option>
+											<option value="Phase 2" >Phase 2</option>
+											<option value="Phase3" >Phase3</option>
 									</select>
 						</div>
 						<div class="col-md-3">
 							<b>Department</b>
 						</div>
 						<div class="col-md-3">
-							<select class="form-control" name="department" required="required">
-											<option value="">Select Department</option>
-											<option value="">FNA/BPO</option>
-											<option value="Financial Recruitment">IT</option>
+							<select class="form-control" name="department" required>
+											<option>Select Department</option>
+											<option value="FNA/BPO">FNA/BPO</option>
+											<option value="IT">IT</option>
 											
 										</select>
 						</div>
@@ -131,7 +136,7 @@ include 'head.php'
 					</div>
 				
 				
-				
+				</form>
 		</div>
 	  </div>
 	</div>	   

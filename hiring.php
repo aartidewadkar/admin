@@ -1,6 +1,13 @@
 <?php
+ 
+  require_once("database.php");
+ 
+?>
+
+<?php
 include 'head.php'
 ?>
+
 
 <body id="page-top">
 
@@ -8,85 +15,7 @@ include 'head.php'
   include 'navbar.php'
   ?>
   
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalScrollableTitle">SignUp Form</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-	 
-      <div class="modal-body">
-	   <form action="code.php" method="POST">
-		 <div class="form-group">
-    <label for="exampleInputEmail1">Name</label>
-    <input type="email" name="username" class="form-control" placeholder="Enter Your Full Name">
-  </div>
-  
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" name="email"class="form-control" placeholder="Enter Email">
-  </div>
-   
-   <div class="form-group">
-    <label for="exampleInputEmail1">Phone</label>
-    <input type="email" name="phone" class="form-control" placeholder="Enter phone no">
-  </div> 
-  
-  <div class="form-group">
-    <select class="browser-default cutstom-select form-control" name="position" required><br>
-        <option selected>Position</option>
-        <option value="">Team Leader</option>
-        <option value="">Recruiter</option>
-        <option value="">Owner</option>
-    </select>
-  </div>
-  
-  <div class="form-group">
-    <select class="browser-default cutstom-select form-control" name="center" required><br>
-        <option selected>Center</option>
-        <option value="">Phase 1</option>
-        <option value="">Phase 2</option>
-        <option value="">Phase 3</option>
-    </select>
-  </div>
-  
-  <div class="form-group">
-    <select class="browser-default cutstom-select form-control" name="department" required><br>
-        <option selected>Department</option>
-        <option value="">BPO</option>
-        <option value="">FNA/IT</option>
-    </select>
-  </div>
-  
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" name="password" class="form-control" placeholder="Password">
-  </div>
-  
-   <div class="form-group">
-    <label for="exampleInputPassword1">Confirm Password</label>
-    <input type="password" name="conf-password" class="form-control" placeholder="Confirm Password">
-  </div>
-  
-</form>
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" name="registerbtn" class="btn btn-primary">Submit</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Modal end -->
-
-  
-  
+ 
   <div id="wrapper">
     <div id="content-wrapper">
 
@@ -115,49 +44,43 @@ include 'head.php'
 					<th>Phone</th>
 				    <th>Client</th>
                     <th>HR</th>
-					<th><a href="editstatus.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>D.O.J </th>
+					<th>D.O.J </th>
 					<th>Status</th>
-					<th>Location</th>
 					<th>Recruiter</th>
 					<th>Center</th>
 					<th>Department</th>
                   </tr>
                 </thead>
 				
-				<tbody>
-                  <tr>
-                    <td>1</td>
-					<td>Pranali</td>
-				    <td>12 dec 17</td>
-                    <td>987656376</td>
-					<td>Wipro</td>
-					<td>Rahul</td>
-					<td>25 jan 18</td>
-					<td>Declined</td>
-					<td>Pune</td>
-					<td>Pranali</td>
-					<td>Phase 1</td>
-					<td>FNA/BPO</td>
-                  </tr>
-                </tbody>
-				
-				<tbody>
-                  <tr>
-                    <td>2</td>
-					<td>Pranali</td>
-				    <td>12 dec 17</td>
-                    <td>987656376</td>
-					<td>Wipro</td>
-					<td>Rahul</td>
-					<td>25 jan 18</td>
-					<td>Declined</td>
-					<td>Pune</td>
-					<td>Pranali</td>
-					<td>Phase 1</td>
-					<td>FNA/BPO</td>
-                  </tr>
-                </tbody>
-			 </table>
+				  <tbody>
+					<?php
+						$query="SELECT * FROM hire";
+						$result=$conn->query($query);
+						if($result->num_rows>0)
+						{ 
+							while($row = $result->fetch_assoc())
+								{
+								?>
+                                    <tr class="odd gradeX">
+										<td><a href="hiring_details.php?id=<?php echo $row['id'] ;?>"><?php echo $row['id'] ;?></a></td>
+                                        <td><a href="hiring_details.php?id=<?php echo $row['id'] ;?>"><?php echo $row['name'];?></a></td>
+                                        <td><?php echo $row['doi'];?></td>
+                                        <td><?php echo $row['phone'];?></td>
+                                        <td ><?php echo $row['client'];?></td>
+										<td ><?php echo $row['hr'];?></td>
+										<td ><?php echo $row['doj'];?></td>
+										<td ><?php echo $row['status'];?></td>
+										<td ><?php echo $row['recruiter'];?></td>
+										<td ><?php echo $row['center'];?></td>
+										<td ><?php echo $row['department'];?></td>
+									 </tr>
+									<?php 
+									}
+									}
+					?>
+                                            
+				 </tbody>
+			</table>
 		    </div>
              
             </div>
@@ -166,9 +89,7 @@ include 'head.php'
         </div>
       </div>
       <!-- /.container-fluid -->
-<?php 
-include 'footer.php'
-?>
+
 
     </div>
     <!-- /.content-wrapper -->
