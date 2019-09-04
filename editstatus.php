@@ -18,11 +18,11 @@ include 'head.php'
 if(isset($_GET['id']))
 {
 $id=$_GET['id'];	
-$q="SELECT * FROM hire where id=".$id;
-$r=$conn->query($q);
-if($r->num_rows>0)
+$query="SELECT * FROM hire where id=".$id;
+$result =$conn->query($query);
+if($result ->num_rows>0)
 { 
-	$rw = $r->fetch_assoc();
+	$rw = $result ->fetch_assoc();
 }
 }
 
@@ -41,14 +41,19 @@ if(isset($_POST["submit"]))
   $department= $_POST["department"];
   
 	
-	
-$query="UPDATE `hire` SET name='".$name."', `doi`='".$doi."',`phone`='".$phone."',`client`='".$client."',`hr`='".$hr."',`doj`='".$doj."',`status`='".$status."',`recruiter`='".$recruiter."',`center`='".$center."',`department`=".$department."' WHERE id=".$id;
+	 $query=" UPDATE `hire` SET name='".$name."',`doi`='".$doi."',`phone`='".$phone."',`client`='".$client."',`hr`='".$hr."',`doj`='".$doj."',`status`='".$status."',`recruiter`='".$recruiter."',`center`='".$center."',`department`='".$department."' WHERE id=".$id;
+
+
+// $query=" UPDATE `hire` SET name='".$name."', `doi`='".$doi."',`phone`='".$phone."',`client`='".$client."',`hr`='".$hr."',`doj`='".$doj."',`status`='".$status."',`recruiter`='".$recruiter."',`center`='".$center."',`department`=".$department."' WHERE id=".$id;
 				
 	$result = $conn->query($query);
 	if($result===TRUE) 
 	{
 		$message = " Updated Successfully"; 
-		header('Location:hiring.php?message='.$message);
+		// header('Location:hiring.php?message='.$message);
+
+    // header('Location:hiring.php');
+
 	}
     else
 	{

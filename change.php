@@ -1,5 +1,11 @@
-<!DOCTYPE html>
+<?php
 
+  require_once("database.php");
+  
+
+?>
+
+<html>
 <style>
 .col-md-3,.col-md-9{
 		padding:10px 0 10px 0;
@@ -7,18 +13,16 @@
 .col-md-9 input[type="password"]{
 	width:50%;
 }
+
 </style>
-<html lang="en">
 <?php
-include 'head.php'
+include 'head.php';
 ?>
-<body id="page-top">
-
- <?php 
- include 'navbar.php'
- ?>
-
+	
+<body>
 <?php
+include 'navbar.php';
+
 if(isset($_POST["update_submit"]))
 {
     if (!empty($_FILES["photo"]["name"])) 
@@ -37,7 +41,7 @@ if(isset($_POST["update_submit"]))
         if(move_uploaded_file($_FILES["photo"]["tmp_name"],$target_path))            
         {
           $str=$row['photo'];
-          $r=strcmp($str,"../images/profiles/profiles/default.jpg");
+          $r=strcmp($str,"../images/profiles/default.jpg");
 
             if($r!=0)
             {
@@ -59,30 +63,34 @@ if(isset($_POST["update_submit"]))
 }
 
 ?>
-<div id="content-wrapper">
 
-      <div class="container-fluid">
-
-        <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-		  <i class="fa fa-user"></i>
-            <a href="">Change Profile Photo</a>
-          </li>
-        </ol>
-	
-        <!-- Area Chart Example-->
-        <div class="card mb-3">
-          <div class="card-header">
-		  <b></b> [ Recruiter ID:  ] 
-		  <span style="float:right;">Last Modified: </span>
-                </div>
-				
-
+ <div id="page-wrapper">
+        <div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Change Profile Photo</h2>  
+        </div>
+    </div>
+	<?php 
+        if(isset($message))
+        {
+    ?>
+    <div class="row" style="text-align:center;color:#337ab7;"> 
+    <?php 
+        echo $message;
+    ?>
+    </div>
+    <?php
+        }
+    ?>	
 	<form action="" method="post" enctype="multipart/form-data">
 	<div class="row">
         <div class="col-lg-12">
-         	
+         	<div class="panel panel-default">
+               	<div class="panel-heading">
+                    <b><?php echo $row['name']; ?></b> [ Recruiter ID: <?php echo $row['id']; ?> ] <span style="float:right;">Last Modified: <?php echo $row['modified_on']; ?></span>
+                </div>
+				<div class="panel-body">
 					<div class="col-md-10">
 						<div class="col-md-3">
 							<b>Select New Photo</b>
@@ -94,10 +102,31 @@ if(isset($_POST["update_submit"]))
 							<input type="submit" style="width:200px;" name="update_submit" class="btn btn-lg btn-success btn-block" value="Upload"/>
 						</div>
 					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-	
+			
+
+	</div>
 </div>
 
 	
+</body>
+</html>
+<!-- jQuery -->
+        <script src="../js/jquery.min.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="../js/bootstrap.min.js"></script>
+
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="../js/metisMenu.min.js"></script>
+
+       
+        <!-- Custom Theme JavaScript -->
+        <script src="../js/startmin.js"></script>
+        
+
+<script src="../js/dataTables/jquery.dataTables.min.js"></script>
+<script src="../js/dataTables/dataTables.bootstrap.min.js"></script>

@@ -33,26 +33,26 @@ include 'head.php'
         <div class="card mb-3">
           <div class="card-header">
 		  <a href="new-entry-hiring.php" class="btn btn-lg btn-success btn-block" style="width:200px;">Add New Entry</a>
-          <div class="card-body">
-            <div class="table-responsive">
+   <div class="card-body">
+     <div class="table-responsive">
 			 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                  <tr>
-				   <th>Sr.</th>
-                    <th>Name</th>
-					<th>D.O.I</th>
-					<th>Phone</th>
+        <thead>
+          <tr>
+				    <th>Sr.</th>
+            <th>Name</th>
+					  <th>D.O.I</th>
+					  <th>Phone</th>
 				    <th>Client</th>
-                    <th>HR</th>
-					<th>D.O.J </th>
-					<th>Status</th>
-					<th>Recruiter</th>
-					<th>Center</th>
-					<th>Department</th>
-                  </tr>
-                </thead>
+            <th>HR</th>
+					  <th>D.O.J </th>
+					  <th>Status</th>
+					  <th>Recruiter</th>
+					  <th>Center</th>
+					  <th>Department</th>
+          </tr>
+        </thead>
 				
-				  <tbody>
+				<tbody>
 					<?php
 						$query="SELECT * FROM hire";
 						$result=$conn->query($query);
@@ -61,12 +61,13 @@ include 'head.php'
 							while($row = $result->fetch_assoc())
 								{
 								?>
-                                    <tr class="odd gradeX">
-										<td><a href="hiring_details.php?id=<?php echo $row['id'] ;?>"><?php echo $row['id'] ;?></a></td>
-                                        <td><a href="hiring_details.php?id=<?php echo $row['id'] ;?>"><?php echo $row['name'];?></a></td>
-                                        <td><?php echo $row['doi'];?></td>
-                                        <td><?php echo $row['phone'];?></td>
-                                        <td ><?php echo $row['client'];?></td>
+                  <tr class="odd gradeX">
+										<td><a href="hiring_details.php?id=<?php echo $row['id'] ;?>"><?php echo $row['id'] ;?>
+                     </a></td>
+                    <td><a href="hiring_details.php?id=<?php echo $row['id'] ;?>"><?php echo $row['name'];?></a></td>
+                    <td><?php echo $row['doi'];?></td>
+                    <td><?php echo $row['phone'];?></td>
+                    <td ><?php echo $row['client'];?></td>
 										<td ><?php echo $row['hr'];?></td>
 										<td ><?php echo $row['doj'];?></td>
 										<td ><?php echo $row['status'];?></td>
@@ -79,7 +80,7 @@ include 'head.php'
 									}
 					?>
                                             
-				 </tbody>
+				</tbody>
 			</table>
 		    </div>
              

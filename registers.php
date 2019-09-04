@@ -26,7 +26,7 @@ if ($conn->connect_error)
 
   echo "connected successfully";
 
-  $sql = "INSERT INTO hire(name,doi,phone,client,hr,doj,status,recruiter,center,department) VALUES('$name','$doi','$phone','$client','$hr','$doj','$status','$recruiter','$center','department')";
+  $sql = "INSERT INTO hire(name,doi,phone,client,hr,doj,status,recruiter,center,department) VALUES('$name','$doi','$phone','$client','$hr','$doj','$status','$recruiter','$center','$department')";
 
     if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";

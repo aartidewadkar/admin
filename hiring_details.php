@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+	form{
+		margin: 25px;
+	}
+	.row{
+		line-height: 2;
 
+	}
+</style>
 <?php
   require_once("database.php");
 ?>
@@ -58,13 +66,13 @@ if($result->num_rows>0)
                         <div class="panel-body">
                         	<div class="row">
 								<div class="col-lg-3" id="form-group1">
-                                  	<label > Name</label>
+                                  	<label > Name :</label>
 								</div>
 								<div class="col-lg-3" id="form-group1">	
 									<div id="txt"><?php echo $row['name'];?>	</div>								
 								</div>
 								<div class="col-lg-3" id="form-group1">
-                                 	<label >D.O.I</label>
+                                 	<label >D.O.I :</label>
 								</div>
 								<div class="col-lg-3" id="form-group1">
 									<div id="txt"><?php echo $row['doi'];?>	</div>
@@ -72,14 +80,14 @@ if($result->num_rows>0)
 							</div>
 							<div class="row">	
                                 <div class="col-lg-3" id="form-group1">
-                                 	<label >Phone</label>
+                                 	<label >Phone :</label>
 								</div>
 								<div class="col-lg-3" id="form-group1">
                                    	<div id="txt"><?php echo $row['phone'];?>	</div>
                                 </div>
 								
 								<div class="col-lg-3" id="form-group1">
-                                 	<label >client</label>
+                                 	<label >client :</label>
 								</div>
 								<div class="col-lg-3" id="form-group1">
                                    	<div id="txt"><?php echo $row['client'];?>	</div>
@@ -87,48 +95,45 @@ if($result->num_rows>0)
 							</div>
 							<div class="row">	
 								<div class="col-lg-3" id="form-group1">
-                                 	<label >HR</label>
+                                 	<label >HR :</label>
 								</div>
 								<div class="col-lg-3" id="form-group1">
                                    	<div id="txt"><?php echo $row['hr'];?>	</div>
 								</div>
 							
 							<div class="col-lg-3" id="form-group1">
-                                 	<label >D.O.J</label>
+                                 	<label >D.O.J :</label>
 							</div>
 								<div class="col-lg-3" id="form-group1">
                                    	<div id="txt"><?php echo $row['doj'];?>	</div>
 							</div>
 							</div>
+
 							<div class="row">
 								<div class="col-lg-3" id="form-group1">
-									<label >Status</label>
+									<label >Status :</label>
 								</div>
 								<div class="col-lg-3" id="form-group1">
 									<div id="txt"><?php echo $row['status'];?>	</div>
 								</div>
 								
-							</div>
-							<div class="row">
 							<div class="col-lg-3" id="form-group1">
-									<label >Recruiter</label>
-									
+									<label >Recruiter :</label>
 							</div>	
-							<div class="col-lg-9" id="form-group1">
+							<div class="col-lg-3" id="form-group1">
 								<div id="txt"><?php echo $row['recruiter'];?>	</div>
 							</div>
-							<div class="col-lg-12" id="form-group1">
 							</div>
-							</div>
+
 							<div class="row">
 							<div class="col-lg-3" id="form-group1">
-									<label >Center</label>
+									<label >Center :</label>
 							</div>
 								<div class="col-lg-3" id="form-group1">
 									<div id="txt"><?php echo $row['center'];?>	</div>
 							</div>
 							<div class="col-lg-3" id="form-group1">
-									<label >Department</label>
+									<label >Department :</label>
 							</div>
 								<div class="col-lg-3" id="form-group1">
 									<div id="txt"><?php echo $row['department'];?>	</div>
