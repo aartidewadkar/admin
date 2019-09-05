@@ -48,7 +48,7 @@ include 'navbar.php'
                 </div>
                 <div class="mr-5">TO Joined!</div>
               </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
+              <a class="card-footer text-white clearfix small z-1" href="to_joined.php">
                 <span class="float-left">View Details</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
@@ -64,7 +64,7 @@ include 'navbar.php'
                 </div>
                 <div class="mr-5">Joined!</div>
               </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
+              <a class="card-footer text-white clearfix small z-1" href="joined.php">
                 <span class="float-left">View Details</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>

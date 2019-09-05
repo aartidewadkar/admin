@@ -34,8 +34,8 @@ include 'head.php'
           <div class="card-header">
 		  <a href="new-entry-hiring.php" class="btn btn-lg btn-success btn-block" style="width:200px;">Add New Entry</a>
    <div class="card-body">
-     <div class="table-responsive">
-			 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+     <div class="dataTable_wrapper">
+			 <table class="table table-striped table-bordered table-hover" style="font-size: 14px;" id="dataTables-example">
         <thead>
           <tr>
 				    <th>Sr.</th>
@@ -62,9 +62,10 @@ include 'head.php'
 								{
 								?>
                   <tr class="odd gradeX">
-										<td><a href="hiring_details.php?id=<?php echo $row['id'] ;?>"><?php echo $row['id'] ;?>
+										<td><a href="ex1.php?id=<?php echo $row['id'] ;?>"><?php echo $row['id'] ;?>
                      </a></td>
-                    <td><a href="hiring_details.php?id=<?php echo $row['id'] ;?>"><?php echo $row['name'];?></a></td>
+                    <td><a href="ex1.php?id=<?php echo $row['id'] ;?>"><?php echo $row['name'];?>
+                    </a></td>
                     <td><?php echo $row['doi'];?></td>
                     <td><?php echo $row['phone'];?></td>
                     <td ><?php echo $row['client'];?></td>
@@ -101,6 +102,18 @@ include 'head.php'
 <?php 
 include 'script.php'
 ?>
+<script src="../js/dataTables/jquery.dataTables.min.js"></script>
+<script src="../js/dataTables/dataTables.bootstrap.min.js"></script>
+<script>
+$(document).ready(function() 
+{
+  $('#dataTables-example').DataTable({
+      responsive: true
+    });
+  
+});
+</script>
+
 </body>
 
 </html>

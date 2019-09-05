@@ -123,8 +123,8 @@ include 'head.php'
 						<div class="col-md-3">
 							<select class="form-control" name="department" required>
 											<option value="">Select Department</option>
-											<option value="FNA/BPO">FNA/BPO</option>
-											<option value="IT">IT</option>
+											<option value="FNA/BPO" >FNA/BPO</option>
+											<option value="IT" >IT</option>
 											
 										</select>
 						</div>
