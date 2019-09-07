@@ -1,8 +1,25 @@
 <?php
  
-  require_once("database.php");
+  require_once("db_config.php");
  
 ?>
+<?php
+
+if(isset($_GET['id']))
+{
+// $id=$_GET['id'];  
+$query=" SELECT * FROM hiring_tbl WHERE  status='".$Joined."'";
+
+$result =$conn->query($query);
+if($result ->num_rows>0)
+{ 
+  $rw = $result ->fetch_assoc();
+}
+}
+
+
+?>
+
 
 <?php
 include 'head.php'
@@ -52,14 +69,15 @@ include 'head.php'
         </thead>
                 
                 <tbody>
-                    <?php
-                        $query="SELECT * FROM hire";
+
+                    <!-- <?php
+                        $query="SELECT * FROM hiring_tbl ";
                         $result=$conn->query($query);
                         if($result->num_rows>0)
                         { 
                             while($row = $result->fetch_assoc())
                                 {
-                                ?>
+                                ?> -->
                   <tr class="odd gradeX">
                                        
                     <td><?php echo $row['id'];?></td>
@@ -74,10 +92,10 @@ include 'head.php'
                     <td ><?php echo $row['center'];?></td>
                     <td ><?php echo $row['department'];?></td>
                  </tr>
-                <?php 
+                <!-- <?php 
                 }
                }
-                    ?>
+                    ?> -->
                                             
                 </tbody>
             </table>

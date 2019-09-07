@@ -7,7 +7,7 @@
 </style>
 
 <?php
-  require_once("database.php");
+  require_once("db_config.php");
 ?>
 
 <?php
@@ -26,7 +26,7 @@ include 'head.php'
 if(isset($_GET['id']))
 {
 $id=$_GET['id'];	
-$query="SELECT * FROM hire where id=".$id;
+$query="SELECT * FROM hiring_tbl where id=".$id;
 $result =$conn->query($query);
 if($result ->num_rows>0)
 { 
@@ -45,7 +45,7 @@ if(isset($_POST["submit"]))
 	 $query=" UPDATE `hire` SET doj='".$doj."',`status`='".$status."' WHERE id=".$id;
 
 
-// $query=" UPDATE `hire` SET name='".$name."', `doi`='".$doi."',`phone`='".$phone."',`client`='".$client."',`hr`='".$hr."',`doj`='".$doj."',`status`='".$status."',`recruiter`='".$recruiter."',`center`='".$center."',`department`=".$department."' WHERE id=".$id;
+
 				
 	$result = $conn->query($query);
 	if($result===TRUE) 
@@ -92,9 +92,10 @@ if(isset($_POST["submit"]))
                     	<div class="panel-heading" style="background-color: gray; padding: 5px;">
                                 <b>SR.</b> <?php echo $rw['id'];?>
                         </div>
+
+                        
 						<form role="form" action="" method="post" >
-                       
-              <div class="row">
+               <div class="row">
 								<div class="col-lg-4" id="form-group">
                                     <label >D.O.J</label>
                 

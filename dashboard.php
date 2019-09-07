@@ -46,9 +46,9 @@ include 'navbar.php'
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa-list"></i>
                 </div>
-                <div class="mr-5">TO Joined!</div>
+                <div class="mr-5">Joined!</div>
               </div>
-              <a class="card-footer text-white clearfix small z-1" href="to_joined.php">
+              <a class="card-footer text-white clearfix small z-1" href="joined.php">
                 <span class="float-left">View Details</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
@@ -62,9 +62,9 @@ include 'navbar.php'
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa-shopping-cart"></i>
                 </div>
-                <div class="mr-5">Joined!</div>
+                <div class="mr-5">To Joined!</div>
               </div>
-              <a class="card-footer text-white clearfix small z-1" href="joined.php">
+              <a class="card-footer text-white clearfix small z-1" href="to_join.php">
                 <span class="float-left">View Details</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
@@ -80,7 +80,7 @@ include 'navbar.php'
                 </div>
                 <div class="mr-5">Declined!</div>
               </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
+              <a class="card-footer text-white clearfix small z-1" href="declined.php">
                 <span class="float-left">View Details</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>

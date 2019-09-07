@@ -1,6 +1,6 @@
 <?php
  
-  require_once("database.php");
+  require_once("db_config.php");
  
 ?>
 
@@ -54,7 +54,7 @@ include 'head.php'
 				
 				<tbody>
 					<?php
-						$query="SELECT * FROM hire";
+						$query="SELECT * FROM hiring_tbl";
 						$result=$conn->query($query);
 						if($result->num_rows>0)
 						{ 

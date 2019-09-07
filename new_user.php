@@ -1,7 +1,14 @@
-<?php
-require_once("database.php");
+<!DOCTYPE html>
+<html lang="en"> 
 
-if(isset($_POST["submit"]))
+<?php
+include 'head.php'
+?>
+
+<?php
+require_once("db_config.php");
+
+if(isset($_POST["register_submit"]))
 {
     $name=$_POST["name"];
 	$email=$_POST["email"];
@@ -19,18 +26,25 @@ if(isset($_POST["submit"]))
 	$reporting_to=$_POST["reporting_to"];
 
 	
-	
-
-    
+    date_default_timezone_set("Asia/Kolkata");
+    $created_on=date("Y-m-d h:i:sa");
+    $password=rand(11111,99999);
+    $recruiter_id=$email;
+	    
 		
-		$query = "INSERT INTO `admin_profile`(`id`, `name`, `gender`, `dob`, `email`, `contact`, `doj`, `emergency_contact`, `local_address`, `permanant_address`, `education`, `position`, `center`, `department`, `reporting_to`)
-		VALUES('".$id."','" . $name . "','" . $gender. "','" . $dob . "','" . $email. "','" . $contact . "','".$doj."','".$emergency_contact."','".$local_address."','".$permanent_address."','".$education."','".$position."','".$center."','".$department."','".$reporting_to."')";
+		 $query = " INSERT INTO `recruiter_tbl`( `recruiter_id`, `name`, `email`, `contact`, `emergency_contact`, `dob`, `doj`, `local_address`, `permanant_address`, `gender`, `education`, `position`, `department`, `center`, `reporting_to`,`password`, `created_on`, `modified_on`)
+            VALUES ('".$recruiter_id."','".$name."','".$email."','".$contact."','".$emergency_contact."','".$dob."','".$doj."','".$local_address."','".$permanent_address."','".$gender."','".$education."','".$position."','".$department."','".$center."','".$reporting_to."','".$password."','".$created_on."','".$modified_on."')";
+
+
+
+        
+
         $result = $conn->query($query);
 		if($result===TRUE) 
         {
 			        	
             $message = "You have registered successfully!"; 
-			header('location:profile1.php?message='.$message);
+			header('location:login.php?message='.$message);
         } 
         else 
         {
@@ -176,8 +190,17 @@ include 'head.php';
                                        Position
                                     </div>
                                     <div class="form-group" style="width:24%;padding-left: 0px;display:inline-block;">
-                                        <input class="form-control" style="width:100%;" required="required" name="position" type="text" autofocus>
-                                    </div>
+                                        <select class="form-control" name="position" required="required">
+                                            <option value="">Select Position</option>
+                                            <option value="Intern">Intern</option>
+                                            <option value="Jr. Recruiter">Jr. Recruiter</option>
+                                            <option value="Recruiter">Recruiter</option>
+                                            <option value="Sr. Recruiter">Sr. Recruiter</option>
+                                            <option value="Team Lead / Recruitment">Team Lead / Recruitment</option>
+                                            <option value="Recruitment Manager">Recruitment Manager</option>
+                                            
+                                        </select>
+                                    </div>  
                                     <div class="form-group" style="width:24%;padding-left: 0px;display:inline-block;">
                                        Departmant
                                     </div>
@@ -196,14 +219,10 @@ include 'head.php';
                                     </div>
                                     <div class="form-group" style="width:24%;padding-left: 0px;display:inline-block;">
                                         <select class="form-control" name="center" required="required">
-											<option value="">Select Designation</option>
-											<option value="Intern">Intern</option>
-											<option value="Jr. Recruiter">Jr. Recruiter</option>
-											<option value="Recruiter">Recruiter</option>
-											<option value="Sr. Recruiter">Sr. Recruiter</option>
-											<option value="Team Lead / Recruitment">Team Lead / Recruitment</option>
-											<option value="Recruitment Manager">Recruitment Manager</option>
-											
+											<option value="">Select Center</option>
+											<option value="Phase 1">Phase 1</option>
+											<option value="Phase 2">Phase 2</option>
+											<option value="Phase 3">Phase 3</option>
 										</select>
                                     </div>
                                     <div class="form-group" style="width:24%;padding-left: 0px;display:inline-block;">
@@ -220,7 +239,7 @@ include 'head.php';
                                    
                                     <!-- Change this to a button or input when using this as a form -->
                                     <div style="float:right;">
-									<input type="submit" style="width:200px;" name="submit" class="btn btn-lg btn-success btn-block" value="Register"/>
+									<input type="submit" style="width:200px;" name="register_submit" class="btn btn-lg btn-success btn-block" value="Register"/>
 									</div>
                                 </fieldset>
                             </form>

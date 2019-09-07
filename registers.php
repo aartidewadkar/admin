@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "hiring";
+$dbname = "hiring_portal";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password,$dbname);
@@ -23,10 +23,16 @@ if ($conn->connect_error)
   $center= $_POST["center"];
   $department= $_POST["department"];
   
+date_default_timezone_set("Asia/Kolkata");
+    $created_on=date("Y-m-d h:i:sa");
+    $modified_on=date("Y-m-d h:i:sa");
+   
+    
 
   echo "connected successfully";
 
-  $sql = "INSERT INTO hire(name,doi,phone,client,hr,doj,status,recruiter,center,department) VALUES('$name','$doi','$phone','$client','$hr','$doj','$status','$recruiter','$center','$department')";
+  $sql = "INSERT INTO hiring_tbl(name,doi,phone,client,hr,doj,status,recruiter,center,department,created_on,modified_on) VALUES(
+  '$name','$doi','$phone','$client','$hr','$doj','$status','$recruiter','$center','$department', '$created_on','$modified_on')";
 
     if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";

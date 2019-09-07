@@ -93,9 +93,9 @@
         </a>
       </li>
 	  <li class="nav-item">
-        <a class="nav-link" href="admin-profile.php">
+        <a class="nav-link" href="recruiter_list.php">
           <i class="fa fa-user"></i>
-          <span>Admin Profile</span>
+          <span>Recruiter List</span>
         </a>
       </li>
      
